@@ -66,13 +66,15 @@ if(isset($_POST['submit'])) {
 
     require '../dbConnection.php';
 
-    echo $_POST['title'] . "</br>";
-    echo $_POST['firstName'] . "</br>";
-    echo $_POST['lastName'] . "</br>";
-    echo $_POST['emailAddress']. "</br>";
-    echo $_POST['userName']. "</br>";
-    echo $_POST['password']. "</br>";
+    $title = $_POST['title'] . "</br>";
+    $firstName = $_POST['firstName'] . "</br>";
+    $lastName = $_POST['lastName'] . "</br>";
+    $emailAddress = $_POST['emailAddress']. "</br>";
+    $userName = $_POST['userName']. "</br>";
+    $password = $_POST['password']. "</br>";
 }
+
+$sql = "SELECT userID from users WHERE userID=?";
 
 ?>
 </div>

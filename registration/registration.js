@@ -11,20 +11,14 @@ function checkPasswordForNumber(input){
 }
 
 function validateFields() {
-    let firstNameValidate = document.getElementById("first-name").value;
-    let lastNameValidate = document.getElementById("last-name").value;
+    let userNameValidate = document.getElementById("user-name").value;
     let emailValidate = document.getElementById("email").value;
     let passwordValidate = document.getElementById("password").value;
 
-    if (firstNameValidate === "") {
-        alert("First name is required");
-        return false;
-    }
-
-    if (lastNameValidate === "") {
-        alert("Last name is required");
-        return false;
-    }
+    // if (userNameValidate === "") {
+    //     alert("User name is required");
+    //     return false;
+    // }
 
     if ( !(emailValidate.includes("@")) || (emailValidate = "") )  {
         alert("Please enter a valid email address");
