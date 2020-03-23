@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="511cda9f-68e2-4674-8338-8cbf38d6152a" name="Web Dev server" url="http://webdev.cs.umt.edu/~ml120499/Midterm/">
+        <fileTransfer host="webdev.cs.umt.edu/~ml120499/Midterm" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

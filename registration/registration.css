@@ -1,0 +1,122 @@
+main {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 1rem;
+    margin-top: 5rem;
+}
+
+.php-table__container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.php-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 40%;
+}
+
+.register-title-top {
+    margin-top: 100px;
+    margin-bottom: -50px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ff5454;
+}
+
+h3 {
+    text-align: center;
+}
+
+.top-h3 {
+    margin-top: 70px;
+}
+
+.register-page {
+    margin: 75px auto;
+}
+
+.table-head {
+    background-color: #ccc;
+}
+
+.table-container {
+}
+
+.form-table {
+    margin: 10px auto;
+    text-align: center;
+    border-collapse: collapse;
+    width: 40%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.table-row-bgcolor {
+    background-color: azure;
+}
+
+.register-form {
+    margin: auto;
+    width: 25rem;
+}
+
+#title {
+    margin-bottom: 1rem;
+}
+
+.register-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ff5454;
+}
+
+.register-form {
+    padding: 1rem;
+}
+
+.register-form label {
+    font-weight: bold;
+}
+
+.register-form label,
+.register-form input,
+.register-form select {
+    width: 100%;
+}
+
+.register-form input, select {
+    margin-bottom: 1rem;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+    outline: none;
+    background: #d8f3df;
+    border-color: #2ddf5c;
+}
+
+.register-form input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+}
+
+.agree-terms__checkbox {
+    margin-right: 1rem;
+}
+
+.register-form button {
+    background-color: #cc003b;
+    color: white;
+    margin-top: 1rem;
+    padding:  .5rem 1rem;
+    font-size: 1.5rem;
+    border: none;
+}
+
+p::first-letter {
+    font-size: 20px;
+}

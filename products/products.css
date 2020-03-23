@@ -1,0 +1,60 @@
+h1 {
+    font-size: 4rem;
+}
+
+.thumbnails__main {
+    margin: 0 2rem;
+}
+
+.thumbnails {
+    margin-top: 7rem;
+}
+
+ul {
+    text-decoration: none;
+}
+
+.thumbnail {
+    margin: 1rem 2rem;
+}
+
+.thumbnail:hover {
+    box-shadow: 8px 8px 6px rgba(100, 100, 100, 0.5);
+}
+
+/*Found this nifty trick of using an image as a checkbox from Stack overflow:*/
+/*https://stackoverflow.com/questions/30663562/use-images-like-checkboxes/30663705
+I combined two solutions to suit my needs
+*/
+
+li {
+    display: inline-block;
+}
+
+label::before {
+    margin-top: 15px;
+    content: url("https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/unchecked_checkbox.png");
+    position: absolute;
+}
+
+:checked+label::before {
+    content: url("https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/checked_checkbox.png");
+}
+input[type=checkbox] {
+    display: none;
+}
+
+:checked+label img {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #333;
+    z-index: -1;
+}
+
+.main-footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: black;
+    padding: 2rem;
+    margin-top: 3rem;
+}

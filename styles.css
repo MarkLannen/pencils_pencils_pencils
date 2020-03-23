@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    overflow-x:hidden;
+}
+
+.main-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #dedede;
+    padding: 0.5rem 1rem;
+    z-index: 1;
+}
+
+.main-header > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-header__brand {
+    display: inline-block;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 100px );
+    vertical-align: middle;
+}
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+}
+
+.main-nav__item {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.main-nav__item a,
+.mobile-nav__item a {
+    text-decoration: none;
+    color: #0e4f1f;
+    font-weight: bold;
+    padding: 0.2rem 0;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+    color: #cc003b;
+    border-bottom: 3px solid #cc003b;
+}
+
+.main-nav__item--cta a {
+    color: white;
+    background: #cc003b;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+    color: #cc003b;
+    background: white;
+    border: none;
+}
+
+#top-section {
+    background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+    url("images/pencilsHero-800px.jpg") center/cover no-repeat border-box,
+    #ff1b68;
+    width: 100vw;
+    height: 33vh;
+    margin-top: 5rem;
+    position: relative;
+}
+
+#top-section h1 {
+    color: white;
+    font-family: "Anton", sans-serif;
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    font-size: 4rem;
+}
+
+.hero-overlay {
+    font-size: 148px;
+}
+
+.banner {
+    width: 100%;
+    margin: 16px 0;
+    border-left: none;
+    padding-left: 40px;
+}
+
+.banner-inset {
+    padding: 16px;
+    border: 1px solid #e6a102;
+    font-size: 20px;
+    color: white;
+    background-color: #e6a102;
+}
+
+.banner-image {
+    width: 100%;
+    margin: 0 auto;
+}
+
+p::first-letter {
+    font-size: 34px;
+}
+
+.horizontal-li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+.main-footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    background: black;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.main-footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.main-footer__link {
+    margin: 1rem 2rem   ;
+    display: inline-block;
+}
+
+.main-footer__link a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active {
+    color: #ccc;
+}
+
