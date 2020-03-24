@@ -74,6 +74,8 @@ if(isset($_POST['submit'])) {
     $userName = $_POST['userName']. "</br>";
     $password = $_POST['password']. "</br>";
 }
+require '../dbConnection.php';
+echo $conn;
 
 $sql = "SELECT userID from users WHERE userID=?";
 $stmt = mysqli_stmt_init($conn);
@@ -83,14 +85,34 @@ if(!mysqli_stmt_prepare($stmt, $sql)) {
     mysqli_stmt_bind_param($stmt, "s", $firstName);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_store_result($stmt);
-    $resultCheck = mysqli_stmt_num_rows();
+    $resultCheck = mysqli_stmt_num_rows(stmt);
+    if($resultCheck > 0) {
+        echo "User name is already taken";
+        exit();
+    }
+    else {
+        $sql = "INSERT INTO users (firstName, lastName, emailAddress, userName, password) VALUES(?, ?, ?, ?, ?)";
+
+        $stmt = mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($stmt, $sql)) {
+            echo "database connection failed";
+            exit();
+    }else {
+        $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+
+        mysqli_stmt_bind_param($stmt, "sssss", $firstName, $lastName, $emailAddress, $userName, $hashedPwd);
+        mysqli_stmt_execute($stmt);
+        // mysqli_stmt_store_result($stmt);
+        echo "You have successfully registered!";
+        exit();
+    }
+    }
 }
+
 
 ?>
 </div>
-
-
-
 <footer class="main-footer">
     <nav>
         <ul class="main-footer__links">
