@@ -39,7 +39,7 @@
 
 <main class="register-page">
     <h1 class="register-title">Please register to create your account.</h1>
-    <form name="registerForm" action="../index.html" class="register-form" onsubmit="return validateFields()" method="POST">
+    <form name="registerForm" action="./registration.php" class="register-form" onsubmit="return validateFields()" method="POST">
         <label for="first-name">First name</label>
         <input name="firstName" type="text" id="first-name" aria-label="First Name">
         <label for="last-name">Last name</label>
@@ -60,58 +60,7 @@
     </form>
 </main>
 <div>
-<?php  
 
-// I learned most of the logic below re: a youtube tutorial here: https://www.youtube.com/watch?v=LC9GaXkdxF8
-
-if(isset($_POST['submit'])) {
-
-    require '../dbConnection.php';
-
-    $firstName = $_POST['firstName'] . "</br>";
-    $lastName = $_POST['lastName'] . "</br>";
-    $emailAddress = $_POST['emailAddress']. "</br>";
-    $userName = $_POST['userName']. "</br>";
-    $password = $_POST['password']. "</br>";
-}
-require '../dbConnection.php';
-echo $conn;
-
-$sql = "SELECT userID from users WHERE userID=?";
-$stmt = mysqli_stmt_init($conn);
-if(!mysqli_stmt_prepare($stmt, $sql)) {
-    echo "database connection failed";
-} else {
-    mysqli_stmt_bind_param($stmt, "s", $firstName);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_store_result($stmt);
-    $resultCheck = mysqli_stmt_num_rows(stmt);
-    if($resultCheck > 0) {
-        echo "User name is already taken";
-        exit();
-    }
-    else {
-        $sql = "INSERT INTO users (firstName, lastName, emailAddress, userName, password) VALUES(?, ?, ?, ?, ?)";
-
-        $stmt = mysqli_stmt_init($conn);
-
-        if(!mysqli_stmt_prepare($stmt, $sql)) {
-            echo "database connection failed";
-            exit();
-    }else {
-        $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-
-        mysqli_stmt_bind_param($stmt, "sssss", $firstName, $lastName, $emailAddress, $userName, $hashedPwd);
-        mysqli_stmt_execute($stmt);
-        // mysqli_stmt_store_result($stmt);
-        echo "You have successfully registered!";
-        exit();
-    }
-    }
-}
-
-
-?>
 </div>
 <footer class="main-footer">
     <nav>
