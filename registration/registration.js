@@ -15,10 +15,10 @@ function validateFields() {
     let emailValidate = document.getElementById("email").value;
     let passwordValidate = document.getElementById("password").value;
 
-    // if (userNameValidate === "") {
-    //     alert("User name is required");
-    //     return false;
-    // }
+    if (userNameValidate === "") {
+        alert("User name is required");
+        return false;
+    }
 
     if ( !(emailValidate.includes("@")) || (emailValidate = "") )  {
         alert("Please enter a valid email address");

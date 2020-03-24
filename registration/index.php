@@ -62,11 +62,12 @@
 <div>
 <?php  
 
+// I learned most of the logic below re: a youtube tutorial here: https://www.youtube.com/watch?v=LC9GaXkdxF8
+
 if(isset($_POST['submit'])) {
 
     require '../dbConnection.php';
 
-    $title = $_POST['title'] . "</br>";
     $firstName = $_POST['firstName'] . "</br>";
     $lastName = $_POST['lastName'] . "</br>";
     $emailAddress = $_POST['emailAddress']. "</br>";
@@ -75,6 +76,15 @@ if(isset($_POST['submit'])) {
 }
 
 $sql = "SELECT userID from users WHERE userID=?";
+$stmt = mysqli_stmt_init($conn);
+if(!mysqli_stmt_prepare($stmt, $sql)) {
+    echo "database connection failed";
+} else {
+    mysqli_stmt_bind_param($stmt, "s", $firstName);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    $resultCheck = mysqli_stmt_num_rows();
+}
 
 ?>
 </div>
