@@ -42,7 +42,7 @@
         <input name="userName" type="text" id="user-name" aria-label="User Name">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" aria-label="password">
-        <button type="submit" name="submit" class="button" aria-label="Login button">Login</button>
+        <button type="submit" name="login-submit" class="button" aria-label="Login button">Login</button>
     </form>
     <form action="./login.php" class="register-form" method="POST">
         <button type="submit" name="logout-submit">Logout</button> 
