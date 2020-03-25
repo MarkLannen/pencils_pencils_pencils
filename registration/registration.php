@@ -69,7 +69,9 @@ if(!mysqli_stmt_prepare($stmt, $sql)) {
 
     if($resultCheck > 0) {
         echo "User name is already taken";
+        header("Location: index.php?error=usertaken");
         exit();
+
     } else {
         
         $sql = "INSERT INTO users (firstName, lastName, emailAddress, userName, password) VALUES(?, ?, ?, ?, ?)";
@@ -78,16 +80,18 @@ if(!mysqli_stmt_prepare($stmt, $sql)) {
     if(!mysqli_stmt_prepare($stmt, $sql)) {
             echo "database connection failed";
             exit();
+
     }else {
         $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
         mysqli_stmt_bind_param($stmt, "sssss", $firstName, $lastName, $emailAddress, $userName, $hashedPwd);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_store_result($stmt);
+        
         echo "You have successfully registered!";
         exit();
         }
-    }
+    }   mysqli_stmt_close($stmt);
+        mysqli_close($conn);
     
 }
 ?>
