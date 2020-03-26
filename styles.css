@@ -27,6 +27,14 @@ body {
     display: inline-block;
 }
 
+.login-status p{
+    font-size: 1rem;
+}
+
+.login-status p::first-letter {
+    font-size: 1rem;
+}
+
 .main-nav {
     display: inline-block;
     text-align: right;

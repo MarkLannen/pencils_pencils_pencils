@@ -24,6 +24,17 @@ session_start();
     </div>
   <nav class="main-nav">
     <ul class="main-nav__items">
+        <li class="main-nav__item login-status">
+            <?php 
+            
+            if(isset($_SESSION['userName'])) {
+               echo '<p class="login-status">Logged in</p>';
+            } else {
+                echo '<p class="login-status">Logged out</p>';
+            };
+
+            ?>
+        </li>
         <li class="main-nav__item">
             <a href="products/index.html">Products</a>
         </li>
