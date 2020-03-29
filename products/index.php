@@ -110,7 +110,7 @@ session_start();
                     <input type="text" name="fileName" placeholder="File Name...">
                     <input type="text" name="fileTitle" placeholder="Image Title...">
                     <input type="text" name="fileDesc" placeholder="Image Description...">
-                    <input type="file" name="Test name">
+                    <input type="file" name="file">
                     <button type="submit" name="submit">Upload</button>
 
                 </form>
