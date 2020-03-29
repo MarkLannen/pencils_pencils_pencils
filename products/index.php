@@ -1,4 +1,4 @@
-<!-- Used some of the logic in this page from this php tutorial on youtube: https://www.youtube.com/watch?v=msO37iodcw8&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=63 -->
+<!-- The php logic in this page from this php tutorial on youtube: https://www.youtube.com/watch?v=msO37iodcw8&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=63 -->
 
 <php
 session_start();
@@ -16,14 +16,14 @@ session_start();
 <body>
 <header class="main-header">
     <div>
-        <a href="../index.html" class="main-header__brand">
+        <a href="../index.php" class="main-header__brand">
             <img src="../images/ppp-logo-75px.png" alt="Pencils Pencils Pencils logo">
         </a>
     </div>
     <nav class="main-nav">
         <ul class="main-nav__items">
             <li class="main-nav__item">
-                <a href="index.html">Products</a>
+                <a href="./index.php">Products</a>
             </li>
             <li class="main-nav__item">
                 <a href="../login/index.php">Login</a>
@@ -42,6 +42,7 @@ session_start();
             <li>
                 <input type="checkbox" id="no2Pencil" />
                 <label for="no2Pencil"><img class="thumbnail" src="images/PencilsThumbnails/colored1_thumbnail.jpg" alt="Picture of colored pencils in a horizontal row.">
+                <h2>This is a picture of a pencil</h2>
                 </label>
             </li>
             <li>
@@ -98,6 +99,20 @@ session_start();
                     <img class="thumbnail" src="images/PencilsThumbnails/white1_thumbnail.jpg" alt="Picture of white pencil on a gray background.">
                 </label>
             </li>
+
+            <?php 
+            include_once '../dbConnection.php';
+            echo '<li>
+                <input type="checkbox" id="colored10"/>
+                <label for="colored10">
+                    <img class="thumbnail" src="images/PencilsThumbnails/white1_thumbnail.jpg" alt="Picture of white pencil on a gray background.">
+                </label>
+            </li>'
+
+
+
+            ?>
+
             </ul>
         </section>
        

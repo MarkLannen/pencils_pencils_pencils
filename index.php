@@ -18,7 +18,7 @@ session_start();
 <body>
 <header class="main-header">
     <div>
-        <a href="index.html" class="main-header__brand">
+        <a href="index.php" class="main-header__brand">
             <img src="images/ppp-logo-75px.png" alt="Pencils Pencils Pencils logo">
         </a>
     </div>
@@ -36,7 +36,7 @@ session_start();
             ?>
         </li>
         <li class="main-nav__item">
-            <a href="products/index.html">Products</a>
+            <a href="products/index.php">Products</a>
         </li>
         <li class="main-nav__item">
             <a href="login/index.php">Login</a>

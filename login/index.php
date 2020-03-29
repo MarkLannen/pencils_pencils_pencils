@@ -19,16 +19,16 @@ session_start();
 
 </head>
 <body>
-<!-- <header class="main-header">
+<header class="main-header">
     <div>
-        <a href="../index.html" class="main-header__brand">
+        <a href="../index.php" class="main-header__brand">
             <img src="../images/ppp-logo-75px.png" alt="Pencils Pencils Pencils logo">
         </a>
     </div>
     <nav class="main-nav">
         <ul class="main-nav__items">
             <li class="main-nav__item">
-                <a href="../products/index.html">Products</a>
+                <a href="../products/index.php">Products</a>
             </li>
             <li class="main-nav__item">
                 <a href="login/index.php">Login</a>
@@ -38,7 +38,7 @@ session_start();
             </li>
         </ul>
     </nav>
-</header> -->
+</header>
 <main class="register-page">
     <h1 class="register-title">Please login your account.</h1>
     <form name="loginForm" action="./login.php" class="register-form" onsubmit="return validateFields()" method="POST">

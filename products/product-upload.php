@@ -35,6 +35,7 @@ if(isset($_POST['submit'])) {
                 $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
                 echo "<br>" . $imageFullName;
                 $fileDestination = "../images/products" . $imageFullName;
+
                 include_once '../dbConnection.php';
 
                 if(empty($imageTitle) || empty($imageDesc)) {
@@ -52,13 +53,13 @@ if(isset($_POST['submit'])) {
                         $rowCount = mysqli_num_rows($result);
                         $setImageOrder = $rowCount + 1;
 
-                        $sql = "INSERT INTO products (titleProduct, descProduct, imgFullNameProduct) 
-                        VALUES (?, ?, ?);";
+                        $sql = "INSERT INTO products (titleProduct, descProduct, imgFullNameProduct, orderProducts) 
+                        VALUES (?, ?, ?, ?);";
 
                         if(!mysqli_stmt_prepare($stmt, $sql)) {
                             echo "SQL statement failed";
                         } else {
-                            mysqli_stmt_bind_param($stmt, "sss", $imageTitle, $imageDesc, $imageFullName);
+                            mysqli_stmt_bind_param($stmt, "ssss", $imageTitle, $imageDesc, $imageFullName, $setImageOrder);
                             mysqli_stmt_execute($stmt);
 
                             move_uploaded_file($fileTempName, $fileDestination);
