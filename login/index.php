@@ -1,3 +1,7 @@
+<php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +19,7 @@
 
 </head>
 <body>
-<header class="main-header">
+<!-- <header class="main-header">
     <div>
         <a href="../index.html" class="main-header__brand">
             <img src="../images/ppp-logo-75px.png" alt="Pencils Pencils Pencils logo">
@@ -34,11 +38,11 @@
             </li>
         </ul>
     </nav>
-</header>
+</header> -->
 <main class="register-page">
     <h1 class="register-title">Please login your account.</h1>
     <form name="loginForm" action="./login.php" class="register-form" onsubmit="return validateFields()" method="POST">
-        <label for="user-name">User Name</label>
+        <label for="userName">User Name</label>
         <input name="userName" type="text" id="user-name" aria-label="User Name">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" aria-label="password">
