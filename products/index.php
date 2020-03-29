@@ -1,3 +1,5 @@
+<!-- Used some of the logic in this page from this php tutorial on youtube: https://www.youtube.com/watch?v=msO37iodcw8&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=63 -->
+
 <php
 session_start();
 ?>
