@@ -51,10 +51,33 @@ input[type=checkbox] {
 }
 
 .main-footer {
-    position: fixed;
+    /* position: relative; */
     width: 100%;
-    bottom: 0;
+    /* bottom: 0; */
     background: black;
     padding: 2rem;
     margin-top: 3rem;
+}
+
+.imgUpload {
+    margin: 50px 0;
+}
+
+.imgUpload {
+    background-color: #ccc;
+    width: 50%;
+    margin: 0 auto;
+    padding: 25px;
+ }
+
+.imgUpload input  {
+    display: block;
+    margin: 2rem auto;
+    padding: .5rem;
+}
+
+.imgUpload button  {
+    display: block;
+    margin: 0 auto;
+    padding: .5rem;
 }

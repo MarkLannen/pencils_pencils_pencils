@@ -100,8 +100,30 @@ session_start();
             </li>
             </ul>
         </section>
+       
+
+       
+          <div class="imgUpload">
+            <section class="">
+                <h2>Upload new products</h2>
+                <form action="./product-upload.php" method="post" enctype="multipart/form-data">
+                    <input type="text" name="fileName" placeholder="File Name...">
+                    <input type="text" name="fileTitle" placeholder="Image Title...">
+                    <input type="text" name="fileDesc" placeholder="Image Description...">
+                    <input type="file" name="Test name">
+                    <button type="submit" name="submit">Upload</button>
+
+                </form>
+
+            </section>
+        </div>
+        
+      
+   
     </main>
 </div>
+
+
 <footer class="main-footer">
     <nav>
         <ul class="main-footer__links">
