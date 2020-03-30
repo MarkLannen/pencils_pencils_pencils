@@ -9,6 +9,10 @@ if(isset($_POST['login-submit'])) {
    $userName = $_POST['userName'];
    $password = $_POST['password'];
 
+   echo $userName;
+   echo $password;
+//    echo $conn;
+
    if(empty($userName) || empty($password)) {
     header("Location: ./index.php?error=emptyfields");
     echo "Empty userName or password". "</br>";
@@ -19,23 +23,33 @@ if(isset($_POST['login-submit'])) {
        $sql = "SELECT * FROM users WHERE userName=?";
        $stmt = mysqli_stmt_init($conn);
 
+
+
        if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ./index.php?error=sqlerror");  
+        echo 'SQL error';
+
        } else {
            mysqli_stmt_bind_param($stmt, "s", $userName);
            mysqli_stmt_execute($stmt);
            $results = mysqli_stmt_get_result($stmt);
 
-           if($row = mysqli_fetch_assoc($results)) {
-               $passwordCheck = password_verify($password, $row['$password']);
+           $row = mysqli_fetch_assoc($results);
+           
+        //    if($row = mysqli_fetch_assoc($results)) {
+        //        $passwordCheck = password_verify($password, $row['password']);
+        //        echo $row['password']. "<br>";
+        //     //    var_dump $passwordCheck . "<br>";
                
 
-               if($passwordCheck == false)  {
-                    header("Location: ./index.php?error=wrongpassword");
-                    echo $userName;
-                    echo $password;
+            //    if($passwordCheck === false)  {
+                if($password != $row['password']) {
+                    // header("Location: ./index.php?error=wrongpassword");
+                    echo 'password incorrect';
+                    echo 'password: '. $password;
                     exit();
-               } else if ($passwordCheck == true) {
+            //    } else if ($passwordCheck === true) {
+                } else if ($password === $row['password']) {
                     session_start();
                     $_SESSION['userLoggedIn'] = $row['userName'];
 
@@ -44,11 +58,8 @@ if(isset($_POST['login-submit'])) {
 
                } else {
 
-               }
+            }
 
-           } else {
-
-           }
        }
    }
 
