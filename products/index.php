@@ -109,13 +109,13 @@ session_start();
                 echo "SQL statement failed";
             } else {
                 mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_results($stmt);
+                $result = mysqli_stmt_get_result($stmt);
 
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<li>
                     <input type="checkbox" id="colored10"/>
                     <label for="colored10">
-                        <div style=background-image: url(./images/'.$row['imgFullNameProduct']')></div>
+                        <div style=background-image: url(./images/'.$row["imgFullNameProduct"].')></div>
                     </label>
                     <h2>'. $row["titleProduct"] . '</h2>
                     <p>' . $row["descProduct"] . '</p>
