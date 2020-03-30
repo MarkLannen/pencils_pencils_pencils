@@ -39,7 +39,7 @@ session_start();
         <section class="thumbnails">
             <h1>Select from our wide variety of pencil products</h1>
             <ul>
-            <li>
+            <!-- <li>
                 <input type="checkbox" id="no2Pencil" />
                 <label for="no2Pencil"><img class="thumbnail" src="images/PencilsThumbnails/colored1_thumbnail.jpg" alt="Picture of colored pencils in a horizontal row.">
                 <h2>This is a picture of a pencil</h2>
@@ -98,19 +98,41 @@ session_start();
                 <label for="colored10">
                     <img class="thumbnail" src="images/PencilsThumbnails/white1_thumbnail.jpg" alt="Picture of white pencil on a gray background.">
                 </label>
-            </li>
+            </li> -->
 
             <?php 
             include_once '../dbConnection.php';
-            echo '<li>
-                <input type="checkbox" id="colored10"/>
-                <label for="colored10">
-                    <img class="thumbnail" src="images/PencilsThumbnails/white1_thumbnail.jpg" alt="Picture of white pencil on a gray background.">
-                </label>
-            </li>'
 
+            $sql = "SELECT * FROM products ORDER BY orderProducts DESC";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt, $sql)) {
+                echo "SQL statement failed";
+            } else {
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_results($stmt);
 
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo '<li>
+                    <input type="checkbox" id="colored10"/>
+                    <label for="colored10">
+                        <div style=background-image: url(./images/'.$row['imgFullNameProduct']')></div>
+                    </label>
+                    <h2>'. $row["titleProduct"] . '</h2>
+                    <p>' . $row["descProduct"] . '</p>
+                </li>';
+                }
+            }
 
+            // '<li>
+            //         <input type="checkbox" id="colored10"/>
+            //         <label for="colored10">
+            //             <img class="thumbnail" src="images/PencilsThumbnails/white1_thumbnail.jpg" alt="Picture of white pencil on a gray background.">
+            //         </label>
+            //         <h2>' . $row["titleProduct"] . '</h2>
+            //         <p>' . $row["descProduct"] . '</p>
+            //     </li>'
+
+          
             ?>
 
             </ul>
@@ -132,9 +154,6 @@ session_start();
 
             </section>
         </div>
-        
-      
-   
     </main>
 </div>
 

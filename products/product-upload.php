@@ -5,7 +5,7 @@
 if(isset($_POST['submit'])) {
 
     $newFileName = $_POST['fileName'];
-    if($_POST['fileName']) {
+    if(empty($newFileName)) {
         $newFileName = "product";  
     } else {
         $newFileName = strtolower(str_replace(" ", "-", $newFileName)); 
