@@ -39,66 +39,7 @@ session_start();
         <section class="thumbnails">
             <h1>Select from our wide variety of pencil products</h1>
             <ul>
-            <!-- <li>
-                <input type="checkbox" id="no2Pencil" />
-                <label for="no2Pencil"><img class="thumbnail" src="images/PencilsThumbnails/colored1_thumbnail.jpg" alt="Picture of colored pencils in a horizontal row.">
-                <h2>This is a picture of a pencil</h2>
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="coloredPencils-1"/>
-                <label for="coloredPencils-1">
-                <img class="thumbnail" src="images/PencilsThumbnails/colored2_thumbnail.jpg" alt="Picture of colored pencils in a vertical row.">
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="colored3"/>
-                <label for="colored3">
-                    <img class="thumbnail" src="images/PencilsThumbnails/colored3_thumbnail.jpg" alt="Picture of colored pencils in a box and a hand holding a colored pencil.">
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="colored4"/>
-                <label for="colored4">
-                    <img class="thumbnail" src="images/PencilsThumbnails/colored4_thumbnail.jpg" alt="Picture of colored pencils in a haphazard row.">
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="colored5"/>
-                <label for="colored5">
-                    <img class="thumbnail" src="images/PencilsThumbnails/colored5_thumbnail.jpg" alt="Picture of colored pencils in a diagonal row.">
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="colored6"/>
-                <label for="colored6">
-                    <img class="thumbnail" src="images/PencilsThumbnails/colored6_thumbnail.jpg" alt="Picture of colored pencils arranged in a circle.">
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="colored7"/>
-                <label for="colored7">
-                    <img class="thumbnail" src="images/PencilsThumbnails/gray1_thumbnail.jpg" alt="Picture of 2 gray pencils on a yellow background.">
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="colored8"/>
-                <label for="colored8">
-                    <img class="thumbnail" src="images/PencilsThumbnails/No2_1_thumbnail.jpg" alt="Picture of five number 2 pencils.">
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="colored9"/>
-                <label for="colored9">
-                    <img class="thumbnail" src="images/PencilsThumbnails/No2_2_thumbnail.jpg" alt="Picture of number 2 pencils in a diagonal row.">
-                </label>
-            </li>
-            <li>
-                <input type="checkbox" id="colored10"/>
-                <label for="colored10">
-                    <img class="thumbnail" src="images/PencilsThumbnails/white1_thumbnail.jpg" alt="Picture of white pencil on a gray background.">
-                </label>
-            </li> -->
+            
 
             <?php 
             include_once '../dbConnection.php';
@@ -110,28 +51,29 @@ session_start();
             } else {
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
-
+                // <input type="checkbox" id="colored10">
+                // <label for="colored10">
+                // </label>
+                // <div style="background-image: url("images/final-images/'.$row["imgFullNameProduct"].'");">placeholder text</div>
+               
+                $ul = "<ul>";
                 while($row = mysqli_fetch_assoc($result)) {
-                    echo '<li>
-                    <input type="checkbox" id="colored10"/>
-                    <label for="colored10">
-                        <div style=background-image: url(./images/'.$row["imgFullNameProduct"].')></div>
-                    </label>
+                    $ul = $ul.'<li>
+                    
+                    <label for="colored10">    
+                    <input type="checkbox" id="colored10"/>                    
+                    <img src="./images/final-images/'.$row["imgFullNameProduct"].'">
+                    </label>     
+                             
+                
                     <h2>'. $row["titleProduct"] . '</h2>
                     <p>' . $row["descProduct"] . '</p>
                 </li>';
                 }
+                $ul = $ul."</ul>";
+
+                echo $ul;
             }
-
-            // '<li>
-            //         <input type="checkbox" id="colored10"/>
-            //         <label for="colored10">
-            //             <img class="thumbnail" src="images/PencilsThumbnails/white1_thumbnail.jpg" alt="Picture of white pencil on a gray background.">
-            //         </label>
-            //         <h2>' . $row["titleProduct"] . '</h2>
-            //         <p>' . $row["descProduct"] . '</p>
-            //     </li>'
-
           
             ?>
 

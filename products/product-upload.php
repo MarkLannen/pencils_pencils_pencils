@@ -31,10 +31,10 @@ if(isset($_POST['submit'])) {
 
     if(in_array($fileActualExt, $allowed)) {
         if($fileError === 0) {
-           if($fileSize > 20000) {
-                $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
+           if($fileSize < 200000) {
+                $imageFullName = $newFileName.".".$fileActualExt;
                 echo "<br>" . $imageFullName;
-                $fileDestination = "../images/products" . $imageFullName;
+                $fileDestination = "../products/images/final-images/" . $imageFullName;
 
                 include_once '../dbConnection.php';
 

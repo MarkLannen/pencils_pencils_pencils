@@ -14,10 +14,6 @@ ul {
     text-decoration: none;
 }
 
-li div {
-    
-}
-
 .thumbnail {
     margin: 1rem 2rem;
 }
@@ -89,4 +85,8 @@ input[type=checkbox] {
 h2 {
     font-size: 1rem;
     
+}
+
+p::first-letter {
+    font-size: 1rem;
 }
